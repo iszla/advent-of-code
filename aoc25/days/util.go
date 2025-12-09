@@ -4,7 +4,8 @@ import (
 	"strconv"
 )
 
-// Day is the interface to implement the AoC solution to easily print the results
+const INT_MAX_VALUE = int(^uint(0) >> 1)
+
 type Day interface {
 	P01(input []string) int
 	P02(input []string) int
@@ -12,6 +13,11 @@ type Day interface {
 
 func toInt(s string) int {
 	v, _ := strconv.Atoi(s)
+	return v
+}
+
+func toFloat(s string) float64 {
+	v, _ := strconv.ParseFloat(s, 64)
 	return v
 }
 
